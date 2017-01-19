@@ -4,6 +4,11 @@ html {
 *, *:before, *:after {
   box-sizing: inherit; }
 
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
 p {
   font-family: "Lato", sans-serif; }
 
@@ -43,12 +48,8 @@ footer {
   background: #565656;
   border-top: #466e83 solid 1em;
   width: 100%;
-  padding: 1rem;
+  padding: 1em;
   text-align: center; }
-
-footer.parent {
-  padding-top: 2em;
-  padding-bottom: 2em; }
 
 main > article > section > header {
   color: white;
@@ -60,10 +61,6 @@ header {
 
 footer {
   padding-top: 10px; }
-
-footer nav.bottom {
-  padding-left: 10em;
-  padding-right: 10em; }
 
 .bar {
   display: flex;
@@ -79,9 +76,10 @@ footer nav.bottom {
   position: relative;
   top: 0;
   bottom: 100%;
-  left: 0;
+  right: 0;
   z-index: 1;
-  padding: 4em;
+  padding-right: 4em;
+  padding-left: 4em;
   background-image: linear-gradient(135deg, #feffff 0%, #ddf1f9 35%, #a0d8ef 100%);
   background-size: 200%; }
 
@@ -99,7 +97,8 @@ footer nav.bottom {
 #myFace {
   max-width: 3.7em;
   max-height: 3.7em;
-  margin-right: 10px; }
+  margin-right: 10px;
+  margin-left: 0; }
 
 .clip-circle {
   clip-path: circle(30px at center); }
@@ -118,8 +117,7 @@ nav.top {
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
-  width: 100%; }
+  padding: 0; }
 
 section > main.parent {
   margin-left: 1em;
@@ -128,11 +126,12 @@ section > main.parent {
 header div.parent > h1 {
   white-space: nowrap; }
 
-small {
+small.child {
   white-space: nowrap;
-  display: inline-block;
-  width: 100px;
-  padding-left: 2em; }
+  flex-shrink: 1;
+  flex-grow: 0;
+  padding-left: 1em;
+  padding-right: 3em; }
 
 a {
   text-decoration: none; }
@@ -179,6 +178,9 @@ li.child {
 .space-between {
   justify-content: space-between; }
 
+.space-around {
+  justify-content: space-around; }
+
 .row {
   flex-flow: row; }
 
@@ -187,7 +189,11 @@ li.child {
   margin: auto;
   flex-basis: auto; }
 
-@media all and (max-width: 930px) {
+@media all and (max-width: 1085px) {
+  .wrapper {
+    padding-right: 4.5em;
+    padding-left: 0; }
+
   article section.parent {
     text-align: center; }
 
@@ -195,39 +201,40 @@ li.child {
     padding-left: 4em;
     padding-right: 4em; }
 
-  header.bar ul.social-media {
+  header.bar {
+    justify-content: space-between; }
+
+  nav.top.child {
     display: none; }
 
-  ul.social-media.bottom .icon {
+  .social-media.bottom .icon {
     width: 2em;
     height: 2em;
     stroke: #466e83;
     fill: white; }
 
-  footer nav.bottom {
-    padding-right: 0; }
-
   ul.social-media.bottom .icon:hover {
     fill: #bfbfbf; }
 
-  .social-media.bottom {
-    display: flex;
-    padding-left: 5em; }
-
   .parent {
-    max-width: 930px; } }
-@media all and (max-width: 862px) {
-  header nav.top {
+    max-width: 1085px; } }
+@media all and (max-width: 750px) {
+  .social-media.bottom {
+    display: flex; }
+
+  nav.top.child {
+    display: none; }
+
+  header ul.social-media {
     display: none; }
 
   .parent {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    max-width: 862px; }
+    max-width: 750px; }
 
   .child {
-    height: calc(100% - 100px);
     display: block;
     width: 100%;
     margin-top: 2px;
@@ -235,14 +242,12 @@ li.child {
 .navigation {
   list-style: none;
   background: #111;
-  width: 100%;
+  width: 200px;
   height: 100%;
   position: fixed;
   top: 0;
   right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0; }
+  bottom: 0; }
 
 .nav-item {
   /* non-critical appearance styles */
@@ -270,8 +275,8 @@ li.child {
 
 label[for="nav-trigger"] {
   position: fixed;
-  top: 15px;
-  left: 1500px;
+  top: 55px;
+  right: 15px;
   z-index: 2; }
 
 label[for="nav-trigger"] {
@@ -283,14 +288,14 @@ label[for="nav-trigger"] {
   background-size: contain; }
 
 .nav-trigger:checked + label {
-  right: 600px; }
+  right: 215px; }
 
 .nav-trigger:checked ~ .wrapper {
-  left: 200px;
+  right: 200px;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5); }
 
 .nav-trigger + label, .wrapper {
-  transition: left 0.2s; }
+  transition: right 0.2s; }
 
 body {
   overflow-x: hidden; }

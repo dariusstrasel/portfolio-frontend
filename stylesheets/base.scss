@@ -20,8 +20,8 @@ $color-background-secondary-dark: rgb(206, 160, 104);
 $color-background-secondary-darkest: rgb(178, 126, 63);
 
 // Sizing
-$mobile-screen-width: 862px;
-$tablet-screen-width: 930px;
+$mobile-screen-width: 750px;
+$tablet-screen-width: 1085px;
 $desktop-screen-width: 1400px;
 
 // Mixins
@@ -44,7 +44,11 @@ html {
   box-sizing: inherit;
 }
 
-
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
 p {
   font-family: $font-body;
@@ -95,17 +99,8 @@ footer {
   background: #565656;
   border-top: $color-background-dark solid 1em;
   width: 100%;
-  //position: absolute;
-  //right: 0;
-  //bottom: 0;
-  //left: 0;
-  padding: 1rem;
+  padding: 1em;
   text-align: center;
-}
-
-footer.parent {
-  padding-top: 2em;
-  padding-bottom: 2em;
 }
 
 main > article > section > header {
@@ -120,11 +115,6 @@ header {
 
 footer {
   padding-top: 10px;
-}
-
-footer nav.bottom {
-  padding-left: 10em;
-  padding-right: 10em;
 }
 
 .bar {
@@ -148,9 +138,12 @@ footer nav.bottom {
   position: relative;
   top: 0;
   bottom: 100%;
-  left: 0;
+  right: 0;
   z-index: 1;
-  padding: 4em;
+  // padding: 4em;
+  padding-right: 4em;
+  padding-left: 4em;
+  // padding-bottom: 4em;
   background-image: linear-gradient(135deg,
                       rgb(254,255,255) 0%,
                       rgb(221,241,249) 35%,
@@ -175,6 +168,7 @@ footer nav.bottom {
   max-width: 3.7em;
   max-height: 3.7em;
   margin-right: 10px;
+  margin-left: 0;
 }
 
 .clip-circle {
@@ -199,7 +193,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 100%;
+  // width: 100%;
 }
 
 section > main.parent {
@@ -211,11 +205,14 @@ header div.parent > h1 {
     white-space: nowrap;
 }
 
-small {
+small.child {
   white-space: nowrap;
-  display: inline-block;
-  width: 100px;
-  padding-left: 2em;
+  flex-shrink: 1;
+  flex-grow: 0;
+  padding-left: 1em;
+  padding-right: 3em;
+  // display: inline-block;
+  // width: inherit;
 }
 
 a {
@@ -247,14 +244,6 @@ article > section > header h1 {
   padding: 1rem;
 }
 
-//nav {
-//  width: 100%;
-//}
-
-//nav ul {
-//  width: 100%;
-//}
-
 li.child {
   margin-left: 5px;
   margin-right: 5px;
@@ -266,8 +255,6 @@ li.child {
 .no-margin {
   margin: 0;
 }
-
-
 
 .parent {
   padding: 0;
@@ -290,6 +277,10 @@ li.child {
   justify-content: space-between;
 }
 
+.space-around {
+  justify-content: space-around;
+}
+
 .row {
   flex-flow: row;
 }
@@ -300,7 +291,15 @@ li.child {
   flex-basis: auto;
 }
 
+@media all and (min-width: $desktop-screen-width) {
+}
+
 @media all and (max-width: $tablet-screen-width) {
+    .wrapper {
+  padding-right: 4.5em;
+  padding-left: 0;
+  }
+
    article section.parent {
      text-align: center;
    }
@@ -310,28 +309,23 @@ li.child {
     padding-right: 4em;
   }
 
-  header.bar ul.social-media {
+  header.bar {
+    justify-content: space-between;
+  }
+
+  nav.top.child {
     display:none;
   }
 
-  ul.social-media.bottom .icon {
+  .social-media.bottom .icon {
   width: 2em;
   height: 2em;
   stroke: $color-background-dark;
   fill: $color-background-accent;
 }
 
-  footer nav.bottom {
-    padding-right: 0;
-  }
-
-    ul.social-media.bottom .icon:hover {
+  ul.social-media.bottom .icon:hover {
   fill: darken($color-background-accent, 25%);
-}
-
-  .social-media.bottom {
-  display: flex;
-    padding-left: 5em;
 }
 
   .parent {
@@ -340,7 +334,15 @@ li.child {
 }
 
 @media all and (max-width: $mobile-screen-width) {
-  header nav.top {
+    .social-media.bottom {
+  display: flex;
+}
+
+    nav.top.child {
+    display:none;
+  }
+
+  header ul.social-media {
     display: none;
   }
 
@@ -352,7 +354,6 @@ li.child {
   }
 
   .child {
-    height: calc(100% - 100px);
     display: block;
     width: 100%;
     margin-top: 2px;
@@ -365,14 +366,14 @@ li.child {
     list-style: none;
     background: #111;
 
-    width: 100%;
+    width: 200px;
     height: 100%;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
-    z-index: 0;
+    // left: 0;
+    // z-index: 0;
 }
 
 .nav-item {
@@ -405,8 +406,8 @@ li.child {
 
 label[for="nav-trigger"] {
     position: fixed;
-    top: 15px;
-    left: 1500px;
+    top: 55px;
+    right: 15px;
     z-index: 2;
 }
 
@@ -421,16 +422,16 @@ label[for="nav-trigger"] {
 
 
 .nav-trigger:checked + label {
-    right: 600px;
+    right: 215px;
 }
 
 .nav-trigger:checked ~ .wrapper {
-    left: 200px;
+    right: 200px;
     box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
 }
 
 .nav-trigger + label, .wrapper {
-    transition: left 0.2s;
+    transition: right 0.2s;
 }
 
 body {
