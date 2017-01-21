@@ -1,18 +1,43 @@
-@import '../partials/variables'; // colors, fonts etc...
-@import '../partials/mixins'; // custom mixins
-@import '../partials/layout'; // responsive grid and media queries
+// Fonts
+$font-header: 'Quicksand', serif;
+$font-body: 'Lato', sans-serif;
+
+// Colors
+$color-outline: rgb(40, 55, 128);
+$color-fill: rgb(69, 95, 226);
+
+$color-background: rgb(96, 128, 147);
+$color-background-light: rgb(124, 148, 163);
+$color-background-lightest: rgb(161, 178, 189);
+$color-background-accent: rgb(255, 255, 255);
+$color-background-dark: rgb(70, 110, 131);
+$color-background-darkest: rgb(44, 88, 114);
+
+$color-background-secondary: rgb(231, 193, 146);
+$color-background-secondary-light: rgb(255, 226, 190);
+$color-background-secondary-lightest: rgb(255, 237, 215);
+$color-background-secondary-dark: rgb(206, 160, 104);
+$color-background-secondary-darkest: rgb(178, 126, 63);
 
 // Sizing
+$mobile-screen-width: 750px;
+$tablet-screen-width: 1085px;
+$desktop-screen-width: 1400px;
 
-
+// Mixins
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
 
 //* {
 //  outline: 1px solid rgba(red, 0.5);
 //}
 
-html * {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+html {
+  box-sizing: border-box;
 }
 
 *, *:before, *:after {
