@@ -232,8 +232,11 @@ li.child {
     display: none; }
 
   header ul.social-media {
-    display: none; }
-
+    display: none; } }
+@media all and (max-width: 750px) and (max-width: 360px) {
+  #myFace {
+    display: none; } }
+@media all and (max-width: 750px) {
   .parent {
     flex-direction: column;
     justify-content: center;

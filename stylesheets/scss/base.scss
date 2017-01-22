@@ -353,9 +353,11 @@ li.child {
     display: none;
   }
 
-  //.flex {
-  //  flex-wrap: nowrap;
-  //}
+@media all and (max-width: 360px) {
+  #myFace {
+    display: none;
+  }
+}
 
   .parent {
     flex-direction: column;
