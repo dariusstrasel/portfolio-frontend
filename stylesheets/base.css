@@ -189,9 +189,15 @@ li.child {
   margin: auto;
   flex-basis: auto; }
 
+@media all and (min-width: 1085px) {
+  .nav-trigger {
+    display: none; }
+
+  label[for="nav-trigger"] {
+    display: none; } }
 @media all and (max-width: 1085px) {
   .wrapper {
-    padding-right: 4.5em;
+    padding-right: 0;
     padding-left: 0; }
 
   article section.parent {
@@ -236,7 +242,6 @@ li.child {
 
   .child {
     display: block;
-    width: 100%;
     margin-top: 2px;
     margin-bottom: 2px; } }
 .navigation {
@@ -274,9 +279,6 @@ li.child {
   clip: rect(0, 0, 0, 0); }
 
 label[for="nav-trigger"] {
-  position: fixed;
-  top: 55px;
-  right: 15px;
   z-index: 2; }
 
 label[for="nav-trigger"] {
@@ -286,9 +288,6 @@ label[for="nav-trigger"] {
   cursor: pointer;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
   background-size: contain; }
-
-.nav-trigger:checked + label {
-  right: 215px; }
 
 .nav-trigger:checked ~ .wrapper {
   right: 200px;

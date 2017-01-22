@@ -291,13 +291,20 @@ li.child {
   flex-basis: auto;
 }
 
-@media all and (min-width: $desktop-screen-width) {
+@media all and (min-width: $tablet-screen-width) {
+  .nav-trigger {
+    display: none;
+  }
+
+  label[for="nav-trigger"] {
+    display: none;
+  }
 }
 
 @media all and (max-width: $tablet-screen-width) {
-    .wrapper {
-  padding-right: 4.5em;
-  padding-left: 0;
+  .wrapper {
+    padding-right: 0;
+    padding-left: 0;
   }
 
    article section.parent {
@@ -346,6 +353,10 @@ li.child {
     display: none;
   }
 
+  //.flex {
+  //  flex-wrap: nowrap;
+  //}
+
   .parent {
     flex-direction: column;
     justify-content: center;
@@ -355,7 +366,7 @@ li.child {
 
   .child {
     display: block;
-    width: 100%;
+    // width: 100%;
     margin-top: 2px;
     margin-bottom: 2px;
   }
@@ -405,9 +416,9 @@ li.child {
 }
 
 label[for="nav-trigger"] {
-    position: fixed;
-    top: 55px;
-    right: 15px;
+    //position: fixed;
+    //top: 55px;
+    //right: 15px;
     z-index: 2;
 }
 
@@ -421,9 +432,9 @@ label[for="nav-trigger"] {
 }
 
 
-.nav-trigger:checked + label {
-    right: 215px;
-}
+//.nav-trigger:checked + label {
+//    right: 215px;
+//}
 
 .nav-trigger:checked ~ .wrapper {
     right: 200px;
