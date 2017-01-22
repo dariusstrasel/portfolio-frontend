@@ -30,7 +30,8 @@ a:hover {
 
 a {
   color: #608093;
-  display: inline-block; }
+  display: inline-block;
+  font-family: "Lato", sans-serif; }
 
 h1 {
   font-family: "Quicksand", serif; }
@@ -55,6 +56,36 @@ header {
 
 footer {
   padding-top: 10px; }
+
+#return-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: black;
+  background: rgba(0, 0, 0, 0.7);
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  border-radius: 35px;
+  z-index: 9999;
+  transition: all 0.3s ease; }
+
+#return-to-top i {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  left: 16px;
+  top: 13px;
+  font-size: 19px;
+  transition: all 0.3s ease; }
+
+#return-to-top:hover {
+  background: rgba(0, 0, 0, 0.9); }
+
+#return-to-top:hover i {
+  color: #fff;
+  top: 5px; }
 
 .bar {
   display: flex;
@@ -178,18 +209,21 @@ li.child {
 .row {
   flex-flow: row; }
 
+.no-wrap {
+  flex-flow: nowrap; }
+
 .child {
   flex-grow: 1;
   margin: auto;
   flex-basis: auto; }
 
-@media all and (min-width: 1117px) {
+@media all and (min-width: 1148px) {
   .nav-trigger {
     display: none; }
 
   label[for="nav-trigger"] {
     display: none; } }
-@media all and (max-width: 1117px) {
+@media all and (max-width: 1148px) {
   .wrapper {
     padding-right: 0;
     padding-left: 0; }
@@ -208,7 +242,7 @@ li.child {
     display: none; }
 
   .parent {
-    max-width: 1117px; } }
+    max-width: 1148px; } }
 @media all and (max-width: 750px) {
   small {
     padding-bottom: 10px; }
@@ -235,9 +269,9 @@ li.child {
     display: block; } }
 .navigation {
   list-style: none;
-  background: #111;
+  background: #a1b2bd;
   width: 200px;
-  height: 100%;
+  min-height: 100%;
   position: fixed;
   top: 0;
   right: 0;
@@ -260,8 +294,8 @@ li.child {
   transition: color 0.2s, background 0.5s; }
 
 .nav-item a:hover {
-  color: #c74438;
-  background: linear-gradient(135deg, transparent 0%, rgba(75, 20, 20, 0.65) 100%); }
+  color: #e7c192;
+  background: linear-gradient(135deg, transparent 0%, rgba(178, 126, 63, 0.4) 100%); }
 
 .nav-trigger {
   position: absolute;

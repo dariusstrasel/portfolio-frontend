@@ -21,7 +21,7 @@ $color-background-secondary-darkest: rgb(178, 126, 63);
 
 // Sizing
 $mobile-screen-width: 750px;
-$tablet-screen-width: 1117px;
+$tablet-screen-width: 1148px;
 $desktop-screen-width: 1400px;
 
 // Mixins
@@ -63,6 +63,10 @@ ul.social-media li{
   padding-right: 1em;
 }
 
+//a.social-media {
+//  padding-left: 1em;
+//}
+
 header a {
   padding-left: 1.2em;
   padding-right: 1.2em;
@@ -77,6 +81,7 @@ a:hover {
 a {
   color: $color-background;
   display:inline-block;
+  font-family: $font-body;
 }
 
 h1 {
@@ -109,7 +114,39 @@ footer {
   padding-top: 10px;
 }
 
-
+// Back To Top Arrow
+#return-to-top {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    border-radius: 35px;
+    z-index: 9999;
+    // display: none;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+// Back to top end
 
 .bar {
   display: flex;
@@ -187,7 +224,6 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  // width: 100%;
 }
 
 section > main.parent {
@@ -205,12 +241,9 @@ small.child {
   flex-grow: 0;
   padding-left: 1em;
   padding-right: 3em;
-  // display: inline-block;
-  // width: inherit;
 }
 
 a {
-  //display: flex;
   text-decoration: none;
 }
 
@@ -277,6 +310,10 @@ li.child {
 
 .row {
   flex-flow: row;
+}
+
+.no-wrap {
+  flex-flow: nowrap;
 }
 
 .child {
@@ -361,9 +398,9 @@ li.child {
 // Nav Menu Code
 .navigation {
     list-style: none;
-    background: #111;
+    background: $color-background-lightest;
     width: 200px;
-    height: 100%;
+    min-height: 100%;
     position: fixed;
     top: 0;
     right: 0;
@@ -391,8 +428,8 @@ li.child {
 }
 
 .nav-item a:hover {
-  color: #c74438;
-  background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(75,20,20,0.65) 100%);
+  color: $color-background-secondary;
+  background: linear-gradient(135deg, rgba(0,0,0,0) 0%,transparentize($color-background-secondary-darkest, 0.6)100%);
 }
 
 .nav-trigger {
