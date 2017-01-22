@@ -21,7 +21,7 @@ $color-background-secondary-darkest: rgb(178, 126, 63);
 
 // Sizing
 $mobile-screen-width: 750px;
-$tablet-screen-width: 1085px;
+$tablet-screen-width: 1117px;
 $desktop-screen-width: 1400px;
 
 // Mixins
@@ -54,19 +54,11 @@ p {
   font-family: $font-body;
 }
 
-.social-media.bottom {
+ul.social-media.bottom {
   display: none;
 }
 
-ul.social-media li:first-child {
-  padding-left: 1em;
-}
-
-ul.social-media li:last-child {
-  padding-right: 1em;
-}
-
-ul.social-media li:not(:first-child):not(:last-child) {
+ul.social-media li{
   padding-left: 1em;
   padding-right: 1em;
 }
@@ -116,6 +108,8 @@ header {
 footer {
   padding-top: 10px;
 }
+
+
 
 .bar {
   display: flex;
@@ -324,24 +318,17 @@ li.child {
     display:none;
   }
 
-  .social-media.bottom .icon {
-  width: 2em;
-  height: 2em;
-  stroke: $color-background-dark;
-  fill: $color-background-accent;
-}
-
-  ul.social-media.bottom .icon:hover {
-  fill: darken($color-background-accent, 25%);
-}
-
   .parent {
     max-width: $tablet-screen-width;
   }
 }
 
 @media all and (max-width: $mobile-screen-width) {
-    .social-media.bottom {
+  small {
+    padding-bottom: 10px;
+  }
+
+    ul.social-media.bottom {
   display: flex;
 }
 
@@ -447,3 +434,14 @@ body {
     overflow-x: hidden;
 }
 // Navigation Menu End
+
+  .social-media.bottom .icon {
+  width: 2em;
+  height: 2em;
+  stroke: $color-background-dark;
+  fill: $color-background-accent;
+}
+
+  ul.social-media.bottom .icon:hover {
+  fill: darken($color-background-accent, 25%);
+}

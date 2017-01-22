@@ -12,16 +12,10 @@ html {
 p {
   font-family: "Lato", sans-serif; }
 
-.social-media.bottom {
+ul.social-media.bottom {
   display: none; }
 
-ul.social-media li:first-child {
-  padding-left: 1em; }
-
-ul.social-media li:last-child {
-  padding-right: 1em; }
-
-ul.social-media li:not(:first-child):not(:last-child) {
+ul.social-media li {
   padding-left: 1em;
   padding-right: 1em; }
 
@@ -189,13 +183,13 @@ li.child {
   margin: auto;
   flex-basis: auto; }
 
-@media all and (min-width: 1085px) {
+@media all and (min-width: 1117px) {
   .nav-trigger {
     display: none; }
 
   label[for="nav-trigger"] {
     display: none; } }
-@media all and (max-width: 1085px) {
+@media all and (max-width: 1117px) {
   .wrapper {
     padding-right: 0;
     padding-left: 0; }
@@ -213,19 +207,13 @@ li.child {
   nav.top.child {
     display: none; }
 
-  .social-media.bottom .icon {
-    width: 2em;
-    height: 2em;
-    stroke: #466e83;
-    fill: white; }
-
-  ul.social-media.bottom .icon:hover {
-    fill: #bfbfbf; }
-
   .parent {
-    max-width: 1085px; } }
+    max-width: 1117px; } }
 @media all and (max-width: 750px) {
-  .social-media.bottom {
+  small {
+    padding-bottom: 10px; }
+
+  ul.social-media.bottom {
     display: flex; }
 
   nav.top.child {
@@ -299,5 +287,14 @@ label[for="nav-trigger"] {
 
 body {
   overflow-x: hidden; }
+
+.social-media.bottom .icon {
+  width: 2em;
+  height: 2em;
+  stroke: #466e83;
+  fill: white; }
+
+ul.social-media.bottom .icon:hover {
+  fill: #bfbfbf; }
 
 /*# sourceMappingURL=base.css.map */
