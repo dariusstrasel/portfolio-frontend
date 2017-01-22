@@ -244,9 +244,7 @@ li.child {
     max-width: 750px; }
 
   .child {
-    display: block;
-    margin-top: 2px;
-    margin-bottom: 2px; } }
+    display: block; } }
 .navigation {
   list-style: none;
   background: #111;

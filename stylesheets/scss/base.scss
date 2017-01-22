@@ -368,9 +368,6 @@ li.child {
 
   .child {
     display: block;
-    // width: 100%;
-    margin-top: 2px;
-    margin-bottom: 2px;
   }
 }
 
@@ -378,7 +375,6 @@ li.child {
 .navigation {
     list-style: none;
     background: #111;
-
     width: 200px;
     height: 100%;
     position: fixed;
