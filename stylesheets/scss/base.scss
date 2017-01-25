@@ -1,3 +1,5 @@
+@import "reset";
+
 // Fonts
 $font-header: 'Quicksand', serif;
 $font-body: 'Lato', sans-serif;
@@ -40,15 +42,43 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+
 
 .flex {
   display: flex;
-  flex-direction: row;
+  //flex-direction: row;
   flex-wrap: wrap;
 }
+
+.column {
+  flex-direction: column;
+}
+
+.row {
+  flex-flow: row;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.block {
+  padding-bottom: 1em;
+  margin-left: 1em;
+  min-width: 350px;
+  -webkit-flex: 1 1 300px;
+  flex: 1;
+}
+
+.flex .child {
+  flex-grow: 1;
+  //  margin: auto;
+  // flex-basis: auto;
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto !important;
+    }
 
 p {
   font-family: $font-body;
@@ -84,8 +114,33 @@ a {
   font-family: $font-body;
 }
 
-h1 {
+h1, h2, h3, h4 {
   font-family: $font-header;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.17em;
+}
+
+h4 {
+  font-size: 1em;
+}
+
+h5 {
+  font-size: .83em;
+}
+
+h6 {
+  font-size: .67em;
 }
 
 header {
@@ -100,14 +155,21 @@ footer {
   text-align: center;
 }
 
-main > article > section > header {
+section {
+  width: 100%;
+}
+
+section > header {
   color: $color-background-accent;
   background: $color-background;
 }
 
+div.row {
+  padding-bottom: 1em;
+}
+
 header {
   margin-bottom: 1em;
-  padding: 0;
 }
 
 footer {
@@ -175,10 +237,11 @@ footer {
   padding-right: 4em;
   padding-left: 4em;
   // padding-bottom: 4em;
-  background-image: linear-gradient(135deg,
-                      rgb(254,255,255) 0%,
-                      rgb(221,241,249) 35%,
-                      rgb(160,216,239) 100%);
+  //background-image: url("../img/hero.jpg");
+  //        //linear-gradient(135deg,
+  //        //            rgb(254,255,255) 0%,
+  //        //            rgb(221,241,249) 35%,
+  //        //            rgb(160,216,239) 100%);
   background-size: 200%;
 }
 
@@ -226,13 +289,9 @@ ul {
   padding: 0;
 }
 
-section > main.parent {
-  margin-left: 1em;
-  margin-right: 1em;
-}
-
-header div.parent > h1 {
-    white-space: nowrap;
+section > div.container {
+  margin-left: 3em;
+  margin-right: 3em;
 }
 
 small.child {
@@ -263,11 +322,7 @@ nav.top > ul > li:hover {
   background: darken($color-background-accent, 5%)
 }
 
-header > .parent > .parent > #name-tag > h1, p {
-  margin: 0;
-}
-
-article > section > header h1 {
+section > header h1 {
   padding: 1rem;
 }
 
@@ -284,8 +339,6 @@ li.child {
 }
 
 .parent {
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-flow: column nowrap;
   align-items: stretch;
@@ -308,19 +361,11 @@ li.child {
   justify-content: space-around;
 }
 
-.row {
-  flex-flow: row;
-}
-
 .no-wrap {
   flex-flow: nowrap;
 }
 
-.child {
-  flex-grow: 1;
-  margin: auto;
-  flex-basis: auto;
-}
+
 
 @media all and (min-width: $tablet-screen-width) {
   .nav-trigger {
@@ -338,7 +383,7 @@ li.child {
     padding-left: 0;
   }
 
-   article section.parent {
+   section h1,h2,h3,h4 {
      text-align: center;
    }
 
@@ -355,7 +400,7 @@ li.child {
     display:none;
   }
 
-  .parent {
+  .flex {
     max-width: $tablet-screen-width;
   }
 }
@@ -383,7 +428,7 @@ li.child {
   }
 }
 
-  .parent {
+  div.row.flex {
     flex-direction: column;
     justify-content: center;
     text-align: center;
@@ -396,7 +441,7 @@ li.child {
 }
 
 // Nav Menu Code
-.navigation {
+.nav-off-canvas {
     list-style: none;
     background: $color-background-lightest;
     width: 200px;
@@ -481,4 +526,10 @@ body {
 
   ul.social-media.bottom .icon:hover {
   fill: darken($color-background-accent, 25%);
+}
+
+  *, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
