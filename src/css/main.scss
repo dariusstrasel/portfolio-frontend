@@ -1,4 +1,5 @@
 @import "reset";
+@import "normalize";
 
 // Fonts
 $font-header: 'Quicksand', serif;
@@ -10,7 +11,7 @@ $color-fill: rgb(69, 95, 226);
 
 $color-background: rgb(96, 128, 147);
 $color-background-light: rgb(124, 148, 163);
-$color-background-lightest: rgb(161, 178, 189);
+$color-background-lightest: rgb(161, 178, 18);
 $color-background-accent: rgb(255, 255, 255);
 $color-background-dark: rgb(70, 110, 131);
 $color-background-darkest: rgb(44, 88, 114);
@@ -41,7 +42,6 @@ $desktop-screen-width: 1400px;
 html {
   box-sizing: border-box;
 }
-
 
 
 .flex {
@@ -121,6 +121,10 @@ h1, h2, h3, h4 {
 
 h1 {
   font-size: 2em;
+}
+
+h1 {
+  margin: 0;
 }
 
 h2 {
@@ -219,35 +223,17 @@ footer {
 }
 
 .wrapper {
-  //display: flex;
-  //flex-direction: column;
-  //align-items: center;
-  //justify-content: center;
-  //max-width: 100%;
 // Nav Menu
   min-width: 100%;
-  min-height: 100%;
+  min-height: calc(100vh - 70px);
   background-color: #fff;
   position: relative;
   top: 0;
   bottom: 100%;
   right: 0;
   z-index: 1;
-  // padding: 4em;
   padding-right: 4em;
   padding-left: 4em;
-  // padding-bottom: 4em;
-  //background-image: url("../images/hero.jpg");
-  //        //linear-gradient(135deg,
-  //        //            rgb(254,255,255) 0%,
-  //        //            rgb(221,241,249) 35%,
-  //        //            rgb(160,216,239) 100%);
-  background-size: 200%;
-}
-
-.icon {
-  display: inline-block;
-  width: 3.5em;
   height: 3.5em;
   stroke-width: 0;
   stroke: $color-background-dark;
@@ -445,11 +431,12 @@ li.child {
     list-style: none;
     background: $color-background-lightest;
     width: 200px;
-    min-height: 100%;
+    min-height: calc(100vh - 70px);
     position: fixed;
     top: 0;
     right: 0;
-    bottom: 0;
+  // This was blocking the footer...
+    // bottom: 0;
     // left: 0;
     // z-index: 0;
 }
@@ -515,9 +502,9 @@ label[for="nav-trigger"] {
 body {
     overflow-x: hidden;
 }
-// Navigation Menu End
 
-  .social-media.bottom .icon {
+// Navigation Menu End
+  .social-media .icon {
   width: 2em;
   height: 2em;
   stroke: $color-background-dark;
