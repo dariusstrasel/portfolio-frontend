@@ -55,8 +55,7 @@ var
 gulp.task('js', function () {
 
     var jsbuild = gulp.src(folder.src + 'js/**/*')
-        .pipe(deporder())
-        .pipe(concat('main.js'));
+        .pipe(deporder());
 
     if (!devBuild) {
         jsbuild = jsbuild
@@ -80,7 +79,7 @@ gulp.task('css', ['images'], function () {
         postCssOpts.push(cssnano);
     }
 
-    return gulp.src(folder.src + 'scss/main.scss')
+    return gulp.src(folder.src + 'css/main.scss')
         .pipe(sass({
             outputStyle: 'nested',
             imagePath: 'images/',
