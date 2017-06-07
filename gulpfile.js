@@ -3,28 +3,28 @@
  */
 
 // Gulp.js configuration
-var
-    // modules
-    gulp = require('gulp'),
-    newer = require('gulp-newer'),
-    imagemin = require('gulp-imagemin'),
-    htmlclean = require('gulp-htmlclean'),
-    concat = require('gulp-concat'),
-    deporder = require('gulp-deporder'),
-    stripdebug = require('gulp-strip-debug'),
-    uglify = require('gulp-uglify'),
-    sass = require('gulp-sass'),
-    postcss = require('gulp-postcss'),
-    assets = require('postcss-assets'),
-    autoprefixer = require('autoprefixer'),
-    mqpacker = require('css-mqpacker'),
-    cssnano = require('cssnano'),
+    var gulp = require('gulp');
+    var newer = require('gulp-newer');
+    var imagemin = require('gulp-imagemin');
+    var htmlclean = require('gulp-htmlclean');
+    var concat = require('gulp-concat');
+    var deporder = require('gulp-deporder');
+    var stripdebug = require('gulp-strip-debug');
+    var uglify = require('gulp-uglify');
+    var sass = require('gulp-sass');
+    var postcss = require('gulp-postcss');
+    var assets = require('postcss-assets');
+    var autoprefixer = require('autoprefixer');
+    var mqpacker = require('css-mqpacker');
+    var cssnano = require('cssnano');
+
+    var browserSync = require('browser-sync').create();
 
     // development mode?
-    devBuild = (process.env.NODE_ENV !== 'production'),
+    var devBuild = (process.env.NODE_ENV !== 'production');
 
     // folders
-    folder = {
+    var folder = {
         src: 'src/',
         build: 'build/'
     };
@@ -41,7 +41,7 @@ var
 // HMTL processing
     gulp.task('html', ['images'], function () {
         var
-            out = folder.build + 'html/',
+            out = folder.build,
             page = gulp.src(folder.src + 'html/**/*')
                 .pipe(newer(out));
         if (!devBuild) {
@@ -106,6 +106,29 @@ gulp.task('watch', function () {
 
     // css changes
     gulp.watch(folder.src + 'css/**/*', ['css']);
+
+});
+
+
+gulp.task('browser-sync-watch', function () {
+
+        browserSync.init({
+        server: {
+            baseDir: folder.build
+        }
+    });
+
+    // image changes
+    gulp.watch(folder.src + 'images/**/*', ['images']);
+
+    // html changes
+    gulp.watch(folder.src + 'html/**/*', ['html']).on('change', browserSync.reload);
+
+    // javascript changes
+    gulp.watch(folder.src + 'js/**/*', ['js']);
+
+    // css changes
+    gulp.watch(folder.src + 'css/**/*', ['css']).on('change', browserSync.reload);
 
 });
 
