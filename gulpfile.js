@@ -110,7 +110,7 @@ gulp.task('watch', function () {
 });
 
 
-gulp.task('browser-sync-watch', function () {
+gulp.task('browser-sync-watch', ['run'], function () {
 
         browserSync.init({
         server: {
