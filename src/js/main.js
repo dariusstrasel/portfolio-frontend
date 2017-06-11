@@ -15,9 +15,10 @@ function backToTop() {
     }, 500);
 }
 
-// $('#return-to-top').click(function() {      // When arrow is clicked
-//     console.log("Scrolling to top...");
-//     $('body,html').animate({
-//         scrollTop : 0                       // Scroll to top of body
-//     }, 500);
-// });
+$(document).keyup(function(keypress) {
+    // If escape key held, close navbar
+     if (keypress.keyCode == 27) { // escape key maps to keycode `27`
+        console.log("Escape pressed...");
+        $('#nav-trigger').prop('checked', false);
+    }
+});
