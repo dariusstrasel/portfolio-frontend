@@ -11,7 +11,7 @@ $color-fill: rgb(69, 95, 226);
 
 $color-background: rgb(96, 128, 147);
 $color-background-light: rgb(124, 148, 163);
-$color-background-lightest: rgb(161, 178, 18);
+$color-background-lightest: rgb(178, 185, 214);
 $color-background-accent: rgb(255, 255, 255);
 $color-background-dark: rgb(70, 110, 131);
 $color-background-darkest: rgb(44, 88, 114);
@@ -24,8 +24,8 @@ $color-background-secondary-darkest: rgb(178, 126, 63);
 
 // Sizing
 $mobile-screen-width: 750px;
-$tablet-screen-width: 1148px;
-$desktop-screen-width: 1400px;
+$tablet-screen-width: 1385px;
+$desktop-screen-width: 1600px;
 
 // Mixins
 @mixin border-radius($radius) {
@@ -181,6 +181,10 @@ footer {
 }
 
 // Back To Top Arrow
+#myName {
+  font-size: 100vw;
+  }
+
 #return-to-top {
     position: fixed;
     bottom: 80px;
@@ -224,17 +228,17 @@ footer {
 
 .wrapper {
 // Nav Menu
-  min-width: 100%;
-  min-height: calc(100vh - 70px);
+  width: 100%;
+  height: 100%;
   background-color: #fff;
   position: relative;
   top: 0;
   bottom: 100%;
   right: 0;
   z-index: 1;
-  padding-right: 4em;
-  padding-left: 4em;
-  height: 3.5em;
+  padding-right: calc(85vw - 70%);
+  padding-left: calc(85vw - 70%);
+  //height: 3.5em;
   stroke-width: 0;
   stroke: $color-background-dark;
   fill: $color-background-darkest;
@@ -354,6 +358,11 @@ li.child {
 
 
 @media all and (min-width: $tablet-screen-width) {
+
+  .nav-off-canvas {
+    display: none;
+  }
+
   .nav-trigger {
     display: none;
   }
@@ -392,8 +401,13 @@ li.child {
 }
 
 @media all and (max-width: $mobile-screen-width) {
+
   small {
     padding-bottom: 10px;
+  }
+
+    a .icon {
+    stroke: none;
   }
 
     ul.social-media.bottom {
@@ -435,6 +449,7 @@ li.child {
     position: fixed;
     top: 0;
     right: 0;
+    bottom: 0;
   // This was blocking the footer...
     // bottom: 0;
     // left: 0;
@@ -504,10 +519,11 @@ body {
 }
 
 // Navigation Menu End
-  .social-media .icon {
+  a .icon {
   width: 2em;
   height: 2em;
   stroke: $color-background-dark;
+    stroke-width: 2;
   fill: $color-background-accent;
 }
 
