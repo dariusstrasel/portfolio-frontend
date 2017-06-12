@@ -24,7 +24,7 @@ $color-background-secondary-darkest: rgb(178, 126, 63);
 
 // Sizing
 $mobile-screen-width: 750px;
-$tablet-screen-width: 1385px;
+$tablet-screen-width: 1200px;
 $desktop-screen-width: 1600px;
 
 // Mixins
@@ -161,6 +161,11 @@ footer {
 
 section {
   width: 100%;
+}
+
+hr {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 section > header {
@@ -356,7 +361,7 @@ li.child {
 }
 
 
-
+// This hides all menu items while resolution is over tablet width.
 @media all and (min-width: $tablet-screen-width) {
 
   .nav-off-canvas {
@@ -372,7 +377,13 @@ li.child {
   }
 }
 
+// This centers content once width is less than tablet.
 @media all and (max-width: $tablet-screen-width) {
+
+  nav.top.child { //Horizontal nav menu
+    display:none;
+  }
+
   .wrapper {
     padding-right: 0;
     padding-left: 0;
@@ -391,42 +402,37 @@ li.child {
     justify-content: space-between;
   }
 
-  nav.top.child {
-    display:none;
-  }
 
   .flex {
     max-width: $tablet-screen-width;
   }
 }
 
+// This activates once width is less than or equal to mobile width.
 @media all and (max-width: $mobile-screen-width) {
-
-  small {
-    padding-bottom: 10px;
-  }
-
-    a .icon {
-    stroke: none;
-  }
-
-    ul.social-media.bottom {
-  display: flex;
-}
-
-    nav.top.child {
-    display:none;
-  }
 
   header ul.social-media {
     display: none;
   }
 
+  small {
+    padding-bottom: 10px;
+  }
+
+  a .icon {
+    stroke: none;
+  }
+
+  ul.social-media.bottom {
+    display: flex;
+  }
+}
+
+  // this activates once width is less than or equal to 360px
 @media all and (max-width: 360px) {
   #myFace {
     display: none;
   }
-}
 
   div.row.flex {
     flex-direction: column;
