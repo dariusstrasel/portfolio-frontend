@@ -1,5 +1,18 @@
 // Source: https://codepen.io/rdallaire/pen/apoyx
 
+$(document).ready(function() {
+    $(".wrapper").click(function(clickedElement){
+        if (clickedElement.target.localName === 'label'){
+            if ($('#nav-trigger').prop('checked')){
+                return $('#nav-trigger').prop('checked').toggle;
+            }
+        }
+        else {
+            $('#nav-trigger').prop('checked', false);
+        }
+    });
+});
+
 $(window).scroll(function() {
     if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
         $('#return-to-top').fadeIn(200);    // Fade in the arrow
@@ -14,6 +27,8 @@ function backToTop() {
         scrollTop : 0                       // Scroll to top of body
     }, 500);
 }
+
+
 
 $(document).keyup(function(keypress) {
     // If escape key held, close navbar
