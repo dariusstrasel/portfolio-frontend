@@ -367,6 +367,13 @@ li.child {
     flex-flow: nowrap;
 }
 
+
+/* entypo */
+
+[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+}
+
 // This hides all menu items while resolution is over tablet width.
 @media all and (min-width: 1475px) {
     .nav-off-canvas {
