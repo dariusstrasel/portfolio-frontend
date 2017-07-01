@@ -68,6 +68,7 @@ html {
 
 .flex .child {
     flex-grow: 1;
+    align-self: flex-start;
     //  margin: auto;
     // flex-basis: auto;
 }
@@ -540,8 +541,7 @@ body {
 
 // Navigation Menu End
 a .icon {
-    width: 2em;
-    height: 2em;
+    font-size: 2em;
     stroke: $color-background-dark;
     stroke-width: 2;
     fill: $color-background-accent;
