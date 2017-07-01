@@ -1,194 +1,198 @@
 @import "reset";
 @import "normalize";
-
 // Fonts
-$font-header: 'Quicksand', serif;
-$font-body: 'Lato', sans-serif;
-
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+$font-header: 'Quicksand',
+serif;
+$font-body: 'Lato',
+sans-serif;
 // Colors
 $color-outline: rgb(40, 55, 128);
 $color-fill: rgb(69, 95, 226);
-
 $color-background: rgb(96, 128, 147);
 $color-background-light: rgb(124, 148, 163);
 $color-background-lightest: rgb(178, 185, 214);
 $color-background-accent: rgb(255, 255, 255);
 $color-background-dark: rgb(70, 110, 131);
 $color-background-darkest: rgb(44, 88, 114);
-
 $color-background-secondary: rgb(231, 193, 146);
 $color-background-secondary-light: rgb(255, 226, 190);
 $color-background-secondary-lightest: rgb(255, 237, 215);
 $color-background-secondary-dark: rgb(206, 160, 104);
 $color-background-secondary-darkest: rgb(178, 126, 63);
-
 // Sizing
 $mobile-screen-width: 750px;
 $tablet-screen-width: 1200px;
 $desktop-screen-width: 1600px;
-
 // Mixins
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
 }
 
 //* {
 //  outline: 1px solid rgba(red, 0.5);
 //}
-
 html {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-
 .flex {
-  display: flex;
-  //flex-direction: row;
-  flex-wrap: wrap;
+    display: flex;
+    //flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .column {
-  flex-direction: column;
+    flex-direction: column;
 }
 
 .row {
-  flex-flow: row;
-  align-items: stretch;
-  flex-wrap: wrap;
+    flex-flow: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .block {
-  padding-bottom: 1em;
-  margin-left: 1em;
-  min-width: 350px;
-  -webkit-flex: 1 1 300px;
-  flex: 1;
+    padding-bottom: 1em;
+    margin-left: 1em;
+    min-width: 300px;
+    max-width: $mobile-screen-width;
+    -webkit-flex: 1 1 200px;
+    flex: 1;
 }
 
 .flex .child {
-  flex-grow: 1;
-  //  margin: auto;
-  // flex-basis: auto;
+    flex-grow: 1;
+    //  margin: auto;
+    // flex-basis: auto;
 }
 
 img {
     width: auto;
     max-width: 100%;
     height: auto !important;
-    }
+}
 
 p {
-  font-family: $font-body;
+    font-family: $font-body;
 }
 
 ul.social-media.bottom {
-  display: none;
+    display: none;
 }
 
-ul.social-media li{
-  padding-left: 1em;
-  padding-right: 1em;
+ul.social-media li {
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 //a.social-media {
 //  padding-left: 1em;
 //}
-
 header a {
-  padding-left: 1.2em;
-  padding-right: 1.2em;
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+}
+
+.highlight {
+    text-shadow: 1px 2px 16px rgba(150, 150, 150, 1);
 }
 
 a:hover {
-  color: $color-background-secondary;
+    color: $color-background-secondary;
 }
 
 a {
-  color: $color-background;
-  display:inline-block;
-  font-family: $font-body;
+    color: $color-background;
+    display: inline-block;
+    font-family: $font-body;
 }
 
-h1, h2, h3, h4 {
-  font-family: $font-header;
-  font-weight: bold;
+h1,
+h2,
+h3,
+h4 {
+    font-family: $font-header;
+    font-weight: bold;
 }
 
 h1 {
-  font-size: 2em;
+    font-size: 2em;
 }
 
 h1 {
-  margin: 0;
+    margin: 0;
 }
 
 h2 {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 h3 {
-  font-size: 1.17em;
+    font-size: 1.17em;
 }
 
 h4 {
-  font-size: 1em;
+    font-size: 1em;
 }
 
 h5 {
-  font-size: .83em;
+    font-size: .83em;
 }
 
 h6 {
-  font-size: .67em;
+    font-size: .67em;
 }
 
 header {
-  background: $color-background-accent;
+    background: $color-background-accent;
 }
 
 footer {
-  background: #565656;
-  border-top: $color-background-dark solid 1em;
-  width: 100%;
-  padding: 1em;
-  text-align: center;
+    background: #565656;
+    border-top: $color-background-dark solid 1em;
+    width: 100%;
+    padding: 1em;
+    text-align: center;
 }
 
 section {
-  width: 100%;
+    width: 100%;
 }
 
 hr {
-  margin-top: 1em;
-  margin-bottom: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
-section > header {
-  color: $color-background-accent;
-  background: $color-background;
+section>header {
+    color: $color-background-accent;
+    background: $color-background;
 }
 
 div.row {
-  padding-bottom: 1em;
+    padding-bottom: 1em;
 }
 
 header {
-  margin-bottom: 1em;
+    margin-bottom: 1em;
 }
 
 footer {
-  padding-top: 10px;
+    padding-top: 10px;
 }
 
 // Back To Top Arrow
 #myName {
-  font-size: 100vw;
-  }
+    font-size: 100vw;
+}
 
 #return-to-top {
     position: fixed;
@@ -205,6 +209,7 @@ footer {
     // display: none;
     transition: all 0.3s ease;
 }
+
 #return-to-top i {
     color: #fff;
     margin: 0;
@@ -214,236 +219,238 @@ footer {
     font-size: 19px;
     transition: all 0.3s ease;
 }
+
 #return-to-top:hover {
     background: rgba(0, 0, 0, 0.9);
 }
+
 #return-to-top:hover i {
     color: #fff;
     top: 5px;
 }
-// Back to top end
 
+// Back to top end
 .bar {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  background: #eee;
-  padding: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #eee;
+    padding: 20px;
 }
 
 .wrapper {
-// Nav Menu
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  position: relative;
-  top: 0;
-  bottom: 100%;
-  right: 0;
-  z-index: 1;
-  padding-right: calc(85vw - 70%);
-  padding-left: calc(85vw - 70%);
-  //height: 3.5em;
-  stroke-width: 0;
-  stroke: $color-background-dark;
-  fill: $color-background-darkest;
+    // Nav Menu
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+    top: 0;
+    bottom: 100%;
+    right: 0;
+    z-index: 1;
+    padding-right: calc(85vw - 70%);
+    padding-left: calc(85vw - 70%);
+    //height: 3.5em;
+    stroke-width: 0;
+    stroke: $color-background-dark;
+    fill: $color-background-darkest;
 }
 
 .icon:hover {
-  fill: lighten($color-background, 10%);
+    fill: lighten($color-background, 10%);
 }
 
 #myFace {
-  max-width: 3.7em;
-  max-height: 3.7em;
-  margin-right: 10px;
-  margin-left: 0;
+    max-width: 3.7em;
+    max-height: 3.7em;
+    margin-right: 10px;
+    margin-left: 0;
 }
 
 .clip-circle {
-  clip-path: circle(30px at center);
+    clip-path: circle(30px at center);
 }
 
 footer a {
-  color: #eee;
+    color: #eee;
 }
 
-nav.top > ul > li {
-  display: inline;
-  border-bottom: 1px solid;
-  border-color: $color-background-darkest;
+nav.top>ul>li {
+    display: inline;
+    border-bottom: 1px solid;
+    border-color: $color-background-darkest;
 }
 
 nav.top {
-  margin-left: 2em;
+    margin-left: 2em;
 }
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-section > div.container {
-  margin-left: 3em;
-  margin-right: 3em;
+section>div.container {
+    margin-left: 3em;
+    margin-right: 3em;
 }
 
 small.child {
-  white-space: nowrap;
-  flex-shrink: 1;
-  flex-grow: 0;
-  padding-left: 1em;
-  padding-right: 3em;
+    white-space: nowrap;
+    flex-shrink: 1;
+    flex-grow: 0;
+    padding-left: 1em;
+    padding-right: 3em;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
-nav.top > ul > li.active {
-  border-radius: 5px;
-  border-top: 1px solid;
-  border-left: 1px solid;
-  border-right: 1px solid;
-  border-color: $color-background-darkest;
+nav.top>ul>li.active {
+    border-radius: 5px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-color: $color-background-darkest;
 }
 
-nav.top > ul > li:hover {
-  background: darken($color-background-accent, 5%)
+nav.top>ul>li:hover {
+    background: darken($color-background-accent, 5%)
 }
 
-section > header h1 {
-  padding: 1rem;
+section>header h1 {
+    padding: 1rem;
 }
 
 li.child {
-  margin-left: 5px;
-  margin-right: 5px;
-  list-style-type: none;
-  display: inline-block;
-  width: calc(100% / 3);
+    margin-left: 5px;
+    margin-right: 5px;
+    list-style-type: none;
+    display: inline-block;
+    width: calc(100% / 3);
 }
 
 .no-margin {
-  margin: 0;
+    margin: 0;
 }
 
 .parent {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: stretch;
-  //justify-content: center;
-  //align-items: stretch;
-  //max-width: $tablet-screen-width;
-  //overflow: hidden;
-  //width: $mobile-screen-width
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    //justify-content: center;
+    //align-items: stretch;
+    //max-width: $tablet-screen-width;
+    //overflow: hidden;
+    //width: $mobile-screen-width
 }
 
 .flex-end {
-  justify-content: flex-end;
+    justify-content: flex-end;
 }
 
 .space-between {
-  justify-content: space-between;
+    justify-content: space-between;
 }
 
 .space-around {
-  justify-content: space-around;
+    justify-content: space-around;
 }
 
 .no-wrap {
-  flex-flow: nowrap;
+    flex-flow: nowrap;
 }
 
-
 // This hides all menu items while resolution is over tablet width.
-@media all and (min-width: $tablet-screen-width) {
+@media all and (min-width: 1475px) {
+    .nav-off-canvas {
+        display: none;
+    }
+    .nav-trigger {
+        display: none;
+    }
+    label[for="nav-trigger"] {
+        display: none;
+    }
+}
 
-  .nav-off-canvas {
-    display: none;
-  }
-
-  .nav-trigger {
-    display: none;
-  }
-
-  label[for="nav-trigger"] {
-    display: none;
-  }
+@media all and (max-width: 1475px) {
+    nav.top.child {
+        //Horizontal nav menu
+        display: none;
+    }
 }
 
 // This centers content once width is less than tablet.
 @media all and (max-width: $tablet-screen-width) {
-
-  nav.top.child { //Horizontal nav menu
-    display:none;
-  }
-
-  .wrapper {
-    padding-right: 0;
-    padding-left: 0;
-  }
-
-   section h1,h2,h3,h4 {
-     text-align: center;
-   }
-
-  header.bar > nav.top > ul li > a {
-    padding-left: 4em;
-    padding-right: 4em;
-  }
-
-  header.bar {
-    justify-content: space-between;
-  }
-
-
-  .flex {
-    max-width: $tablet-screen-width;
-  }
+    nav.top.child {
+        //Horizontal nav menu
+        display: none;
+    }
+    .wrapper {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    section h1,
+    h2,
+    h3,
+    h4 {
+        text-align: center;
+    }
+    header.bar>nav.top>ul li>a {
+        padding-left: 4em;
+        padding-right: 4em;
+    }
+    header.bar {
+        justify-content: space-between;
+    }
+    .flex {
+        max-width: $tablet-screen-width;
+    }
 }
 
 // This activates once width is less than or equal to mobile width.
 @media all and (max-width: $mobile-screen-width) {
-
-  header ul.social-media {
-    display: none;
-  }
-
-  small {
-    padding-bottom: 10px;
-  }
-
-  a .icon {
-    stroke: none;
-  }
-
-  ul.social-media.bottom {
-    display: flex;
-  }
+    header ul.social-media {
+        display: none;
+    }
+    small {
+        padding-bottom: 10px;
+    }
+    a .icon {
+        stroke: none;
+    }
+    ul.social-media.bottom {
+        display: flex;
+    }
 }
 
-  // this activates once width is less than or equal to 360px
+// this activates once width is less than or equal to 360px
 @media all and (max-width: 360px) {
-  #myFace {
-    display: none;
-  }
-
-  div.row.flex {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    max-width: $mobile-screen-width;
-  }
-
-  .child {
-    display: block;
-  }
+    #myFace {
+        display: none;
+    }
+    div.row.flex {
+        //flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        //max-width: $mobile-screen-width;
+    }
+    .child {
+        display: block;
+    }
+    section>div.container {
+        margin: .2em;
+    }
+    .wrapper {
+        margin: 0;
+    }
 }
 
 // Nav Menu Code
@@ -456,33 +463,33 @@ li.child {
     top: 0;
     right: 0;
     bottom: 0;
-  // This was blocking the footer...
+    // This was blocking the footer...
     // bottom: 0;
     // left: 0;
     // z-index: 0;
 }
 
 .nav-item {
-  /* non-critical appearance styles */
-  width: 200px;
-  border-top: 1px solid #111;
-  border-bottom: 1px solid #000;
+    /* non-critical appearance styles */
+    width: 200px;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #000;
 }
 
 .nav-item a {
-  /* non-critical appearance styles */
-  display: block;
-  padding: 1em;
-  background: linear-gradient(135deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
-  color: white;
-  font-size: 1.2em;
-  text-decoration: none;
-  transition: color 0.2s, background 0.5s;
+    /* non-critical appearance styles */
+    display: block;
+    padding: 1em;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: color 0.2s, background 0.5s;
 }
 
 .nav-item a:hover {
-  color: $color-background-secondary;
-  background: linear-gradient(135deg, rgba(0,0,0,0) 0%,transparentize($color-background-secondary-darkest, 0.6)100%);
+    color: $color-background-secondary;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, transparentize($color-background-secondary-darkest, 0.6)100%);
 }
 
 .nav-trigger {
@@ -506,17 +513,17 @@ label[for="nav-trigger"] {
     background-size: contain;
 }
 
-
 //.nav-trigger:checked + label {
 //    right: 215px;
 //}
-
-.nav-trigger:checked ~ .wrapper {
+.nav-trigger:checked~.wrapper {
     right: 200px;
-    box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+    //padding-right: 0;
 }
 
-.nav-trigger + label, .wrapper {
+.nav-trigger+label,
+.wrapper {
     transition: right 0.2s;
 }
 
@@ -525,20 +532,22 @@ body {
 }
 
 // Navigation Menu End
-  a .icon {
-  width: 2em;
-  height: 2em;
-  stroke: $color-background-dark;
+a .icon {
+    width: 2em;
+    height: 2em;
+    stroke: $color-background-dark;
     stroke-width: 2;
-  fill: $color-background-accent;
+    fill: $color-background-accent;
 }
 
-  ul.social-media.bottom .icon:hover {
-  fill: darken($color-background-accent, 25%);
+ul.social-media.bottom .icon:hover {
+    fill: darken($color-background-accent, 25%);
 }
 
-  *, *:before, *:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
 }
