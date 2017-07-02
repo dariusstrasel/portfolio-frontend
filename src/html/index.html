@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 
 <head>
     <meta charset="UTF-8">
@@ -8,10 +8,36 @@
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <!--<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">-->
     <script type="text/javascript" src="../js/main.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Darius Strasel | Software / Web Developer</title>
+    <meta name="description" content="Darius Strasel is a Rhode Island-based Software Engineer with a focus on Full Stack Web Development.">
+    <link rel="canonical" href="http://www.dariusstrasel.com/">
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="Darius Strasel | Software / Web Developer">
+    <meta itemprop="description" content="Darius Strasel is a Rhode Island-based Software Engineer with a focus on Full Stack Web Development.">
+    <meta itemprop="image" content="http://www.dariusstrasel.com/images/code.jpg">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="http://www.dariusstrasel.com/images/code.jpg">
+    <meta name="twitter:site" content="@dariusstrasel">
+    <meta name="twitter:title" content="Darius Strasel | Software / Web Developer">
+    <meta name="twitter:description" content="Darius Strasel is a Rhode Island-based Software Engineer with a focus on Full Stack Web Development.">
+    <meta name="twitter:creator" content="@dariusstrasel">
+    <!-- Twitter summary card with large image must be at least 280x150px -->
+    <meta name="twitter:image:src" content="http://www.dariusstrasel.com/images/code.jpg">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Darius Strasel | Software / Web Developer" />
+    <meta property="og:site_name" content="Darius Strasel's Software Portfolio" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.dariusstrasel.com/" />
+    <meta property="og:image" content="http://www.dariusstrasel.com/images/code.jpg" />
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta property="og:description" content="Darius Strasel is a Rhode Island-based Software Engineer with a focus on Full Stack Web Development." />
+    <meta property="og:site_name" content="Darius Strasel's Software Portfolio" />
 </head>
 
 <body>
@@ -19,9 +45,9 @@
     <nav class="nav-off-canvas">
         <ul>
             <li class="nav-item"><a href="#">About</a></li>
-            <li class="nav-item"><a href="#">Blog</a></li>
-            <li class="nav-item"><a href="#">Software</a></li>
-            <li class="nav-item"><a href="#">Photos</a></li>
+            <li class="nav-item"><a href="#"><i class="entypo-traffic-cone"></i> Blog</a></li>
+            <li class="nav-item"><a href="#"><i class="entypo-traffic-cone"></i> Software</a></li>
+            <li class="nav-item"><a href="#"><i class="entypo-traffic-cone"></i> Photos</a></li>
         </ul>
     </nav>
     <input type="checkbox" id="nav-trigger" class="nav-trigger" />
@@ -29,7 +55,7 @@
         <header class="bar flex">
             <!--Logo on left-->
             <div class="child">
-                <img class="clip-circle" src="../images/me.jpg" id="myFace" align="left">
+                <img class="clip-circle" src="../images/me.jpg" id="myFace" align="left" alt="Portrait of Web Developer Darius Strasel">
                 <div class="parent">
                     <h1 class="myName">Darius Strasel</h1>
                     <p>Software / Web Developer</p>
@@ -76,12 +102,10 @@
                         </div>
                     </div>
                     <div class="row flex">
-                        <div class="block child">
+                        <div class="block child align-center">
                             <p>His approach to development focuses on learning the intricacies of both front and backend development, with a background that tends to lean towards backend development, databases & analytics, and infrastructure/ systems automation/tooling.
                                 He has a keen appreciation for well-created interface design, and regularly works in the front-end as well.</p>
                         </div>
-                    </div>
-                    <div class="row flex">
                         <div class="block child">
                             <ul>
                                 <li><i class="entypo-code"></i> <span class="highlight">Front-End Development:</span> HTML, CSS, SASS, JavaScript, Responsive Design, AngularJS, TypeScript, Bootstrap, Backbone.js, gulp.js</li>
@@ -97,7 +121,7 @@
                         </div>
                     </div>
                     <div class="row flex">
-                        <div class="block child">
+                        <div class="block child align-top">
                             <figure>
                                 <blockquote>Darius is an absolute pleasure to work with. We hired him for a crucial event and he over delivered in every way. Darius arrived early to capture details before guests arrived, discreetly took photos the entire evening,
                                     and sent a link for the finished photos within a week of our event. In addition to his stunning and thoughtful photos, Darius is kind, intelligent, and willing to jump in to ensure your event is a success. He takes
@@ -105,21 +129,21 @@
                             </figure>
                             <figcaption>--- Corinne Hursh, Event Planner</figcaption>
                         </div>
-                        <div class="block child">
+                        <div class="block child align-top">
                             <figure>
                                 <blockquote>Darius has served as a photographer for Year Up Providence on many occasions, including our annual graduation, and always produces high quality work. His gift for photography is undeniable, and he brings professionalism,
                                     responsiveness and a strong work ethic to these projects.</blockquote>
                             </figure>
                             <figcaption>--- Aimee Ollman, Development & Nonprofit Consultant</figcaption>
                         </div>
-                        <div class="block child">
+                        <div class="block child align-top">
                             <figure>
                                 <blockquote>Darius Strasel is a professional who can solve any technical problem. Darius is a great critical thinker, hard worker, and team player. Any company who brings him on board will benefit from his professional and academic
                                     abilities greatly.</blockquote>
                             </figure>
                             <figcaption>--- Douglas Tondreau, Software Analyst</figcaption>
                         </div>
-                        <div class="block child">
+                        <div class="block child align-top">
                             <figure>
                                 <blockquote>Darius is reliable, fearless and smart. He has proven to be a great resource for various discussions, topics, and projects. (Such as the time he volunteered for Year Up by being Class 20's photographer, showing an artistic
                                     interest as well.) The fearless part of Darius is how he is not afraid to ask questions and share his knowledge with the community every single day undeterred. He would be a great employee for any industry! He will
@@ -127,7 +151,7 @@
                             </figure>
                             <figcaption>--- Jacqueline Wun-meen, Service Technician</figcaption>
                         </div>
-                        <div class="block child">
+                        <div class="block child align-top">
                             <figure>
                                 <blockquote>Darius is the most talented individual I have had the pleasure of working with in all my life. I was his colleague during our journey through Year Up. He has such a wide array of technical knowledge that you would think
                                     he's a walking textbook. He's knowledgeable, but he's also personable. He likes to go above and beyond in his teamwork, bringing up as many others as he can on his journey up the corporate ladder. He will be an incredibly
@@ -135,7 +159,7 @@
                             </figure>
                             <figcaption>--- Kyle Swanson, Help Desk Engineer</figcaption>
                         </div>
-                        <div class="block child">
+                        <div class="block child align-top">
                             <figure>
                                 <blockquote>If you're looking for a developer with experience in any language, database, or platform you can think of, look no further. Darius is a highly skilled (and friendly) software architect. As a product manager, I needed help
                                     building a Chrome Extension to fit to modify our teams' software, but didn't have the technical skills to do it myself. Darius offered to help quickly rewrote a lot of the code to be understandable for non-engineers.
@@ -144,7 +168,7 @@
                             </figure>
                             <figcaption>--- Carlos J Argüello, Product Manager</figcaption>
                         </div>
-                        <div class="block child">
+                        <div class="block child align-top">
                             <figure>
                                 <blockquote>Darius is one of the most impressive interns I've had the pleasure of knowing (and we've been through several interns in my time here!). Although his official focus here has been on the Desktop IT side, he has consistently
                                     demonstrated to me an incredible grasp of complex thinking, programming, database and development concepts that I believe would make him successful... I cannot recommend him enough as an extraordinarily bright, kind
@@ -182,6 +206,22 @@
         </footer>
     </div>
     <a href="javascript:" id="return-to-top" onclick="backToTop()"><i role="button" class="entypo-up-open-big"></i></a>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-101936411-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 </body>
 
 </html>
