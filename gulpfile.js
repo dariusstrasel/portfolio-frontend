@@ -33,7 +33,7 @@ var folder = {
 gulp.task('images', function() {
     var out = folder.build + 'images/';
     return gulp.src(folder.src + 'images/**/*')
-        .pipe(newer(out))
+        //.pipe(newer(out))
         .pipe(imagemin({ optimizationLevel: 10 }))
         .pipe(gulp.dest(out));
 });
