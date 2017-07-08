@@ -83,6 +83,13 @@ p {
     font-family: $font-body;
 }
 
+.block.child.skill-image {
+    width: 100%;
+    height: auto;
+    max-height: 5em;
+    align-self: center;
+}
+
 ul.social-media.bottom {
     display: none;
 }
@@ -244,6 +251,7 @@ footer {
     width: 100%;
     height: 100%;
     background-color: #fff;
+    border: 5px solid #fff;
     position: relative;
     top: 0;
     bottom: 100%;
@@ -432,6 +440,9 @@ li.child {
 @media all and (max-width: $mobile-screen-width) {
     header ul.social-media {
         display: none;
+    }
+    .block.child.skill-image {
+        max-height: 9em;
     }
     small {
         padding-bottom: 10px;
