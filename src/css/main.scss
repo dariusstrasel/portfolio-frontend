@@ -2,10 +2,16 @@
 @import "normalize";
 // Fonts
 @import url(http://weloveiconfonts.com/api/?family=entypo);
-$font-header: 'Quicksand',
-serif;
-$font-body: 'Lato',
+$font-display: 'Fredericka the Great',
+cursive;
+$font-header: 'Lato',
+"Open Sans",
+"Helvetica Neue",
+Helvetica,
+Arial,
 sans-serif;
+$font-body: 'Quicksand',
+serif;
 // Colors
 $color-outline: rgb(40, 55, 128);
 $color-fill: rgb(69, 95, 226);
@@ -22,7 +28,7 @@ $color-background-secondary-dark: rgb(206, 160, 104);
 $color-background-secondary-darkest: rgb(178, 126, 63);
 // Sizing
 $mobile-screen-width: 750px;
-$tablet-screen-width: 1200px;
+$tablet-screen-width: 1177px;
 $desktop-screen-width: 1600px;
 // Mixins
 @mixin border-radius($radius) {
@@ -32,11 +38,108 @@ $desktop-screen-width: 1600px;
     border-radius: $radius;
 }
 
-//* {
-//  outline: 1px solid rgba(red, 0.5);
-//}
+// High-level Styles
 html {
     box-sizing: border-box;
+}
+
+// Custom Styles
+body {
+    font-size: 16px;
+}
+
+p,
+blockquote {
+    font-family: $font-body;
+    text-indent: 1em;
+    letter-spacing: -0.01em;
+    word-spacing: .25em;
+}
+
+.myName+p {
+    text-indent: 0;
+}
+
+a:hover {
+    color: $color-background-secondary;
+}
+
+a {
+    color: $color-background;
+    display: inline-block;
+    font-family: $font-body;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $font-header;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: calc(2em * 1.5);
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    line-height: calc(1.5em * 1.5);
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: 1.17em;
+    line-height: calc(1.17em * 1.5);
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 1em;
+    line-height: calc(1em * 1.5);
+}
+
+h5 {
+    font-size: .83em;
+}
+
+h6 {
+    font-size: .67em;
+}
+
+header {
+    background: $color-background-accent;
+}
+
+@mixin blockquote($character) {
+    content: $character;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid $color-background-dark;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+figcaption {
+    font-family: $font-header;
+}
+
+blockquote:before {
+    @include blockquote(open-quote);
+}
+
+// Backgroun URL Classes
+.skills {
+    //background: url("/images/skills.jpg")
 }
 
 .flex {
@@ -79,10 +182,6 @@ img {
     height: auto !important;
 }
 
-p {
-    font-family: $font-body;
-}
-
 .block.child.skill-image {
     width: 100%;
     height: auto;
@@ -111,56 +210,6 @@ header a {
 
 .highlight {
     text-shadow: 1px 2px 16px $color-background-lightest;
-}
-
-a:hover {
-    color: $color-background-secondary;
-}
-
-a {
-    color: $color-background;
-    display: inline-block;
-    font-family: $font-body;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    font-family: $font-header;
-    font-weight: bold;
-}
-
-h1 {
-    font-size: 2em;
-}
-
-h1 {
-    margin: 0;
-}
-
-h2 {
-    font-size: 1.5em;
-}
-
-h3 {
-    font-size: 1.17em;
-}
-
-h4 {
-    font-size: 1em;
-}
-
-h5 {
-    font-size: .83em;
-}
-
-h6 {
-    font-size: .67em;
-}
-
-header {
-    background: $color-background-accent;
 }
 
 footer {
@@ -197,9 +246,11 @@ footer {
     padding-top: 10px;
 }
 
-// Back To Top Arrow
-#myName {
-    font-size: 100vw;
+.myName {
+    // font-size: 100vw;
+    font-weight: 100;
+    font-family: $font-display;
+    line-height: 1.7em;
 }
 
 #return-to-top {
@@ -237,7 +288,6 @@ footer {
     top: 5px;
 }
 
-// Back to top end
 .bar {
     display: flex;
     align-items: center;
@@ -247,7 +297,6 @@ footer {
 }
 
 .wrapper {
-    // Nav Menu
     width: 100%;
     height: 100%;
     background-color: #fff;
@@ -338,7 +387,7 @@ nav.top>ul>li:hover {
     background: darken($color-background-accent, 5%)
 }
 
-section>header h1 {
+section>header h2 {
     padding: 1rem;
 }
 
