@@ -1,0 +1,625 @@
+@import "reset";
+@import "normalize";
+// Fonts
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+$font-display: 'Fredericka the Great',
+cursive;
+$font-header: 'Lato',
+"Open Sans",
+"Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif;
+$font-body: 'Quicksand',
+serif;
+// Colors
+$color-outline: rgb(40, 55, 128);
+$color-fill: rgb(69, 95, 226);
+$color-background: rgb(96, 128, 147);
+$color-background-light: rgb(124, 148, 163);
+$color-background-lightest: rgb(178, 185, 214);
+$color-background-accent: rgb(255, 255, 255);
+$color-background-dark: rgb(70, 110, 131);
+$color-background-darkest: rgb(44, 88, 114);
+$color-background-secondary: rgb(231, 193, 146);
+$color-background-secondary-light: rgb(255, 226, 190);
+$color-background-secondary-lightest: rgb(255, 237, 215);
+$color-background-secondary-dark: rgb(206, 160, 104);
+$color-background-secondary-darkest: rgb(178, 126, 63);
+// Sizing
+$mobile-screen-width: 750px;
+$tablet-screen-width: 1177px;
+$desktop-screen-width: 1600px;
+// Mixins
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+// High-level Styles
+html {
+    box-sizing: border-box;
+}
+
+// Custom Styles
+body {
+    font-size: 16px;
+}
+
+p,
+blockquote {
+    font-family: $font-body;
+    text-indent: 1em;
+    letter-spacing: -0.01em;
+    word-spacing: .25em;
+}
+
+.myName+p {
+    text-indent: 0;
+}
+
+a:hover {
+    color: $color-background-secondary;
+}
+
+a {
+    color: $color-background;
+    display: inline-block;
+    font-family: $font-body;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $font-header;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2em;
+    line-height: calc(2em * 1.5);
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    line-height: calc(1.5em * 1.5);
+    letter-spacing: -0.01em;
+}
+
+h3 {
+    font-size: 1.17em;
+    line-height: calc(1.17em * 1.5);
+    text-transform: uppercase;
+}
+
+h4 {
+    font-size: 1em;
+    line-height: calc(1em * 1.5);
+}
+
+h5 {
+    font-size: .83em;
+}
+
+h6 {
+    font-size: .67em;
+}
+
+header {
+    background: $color-background-accent;
+}
+
+@mixin blockquote($character) {
+    content: $character;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid $color-background-dark;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+figcaption {
+    font-family: $font-header;
+}
+
+blockquote:before {
+    @include blockquote(open-quote);
+}
+
+// Backgroun URL Classes
+.skills {
+    //background: url("/images/skills.jpg")
+}
+
+.flex {
+    display: flex;
+    //flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    flex-flow: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.block {
+    padding-bottom: 1em;
+    margin-left: 1em;
+    min-width: 300px;
+    max-width: $mobile-screen-width;
+    -webkit-flex: 1 1 200px;
+    flex: 1;
+}
+
+.flex .child {
+    flex-grow: 1;
+    align-self: flex-start;
+    //  margin: auto;
+    // flex-basis: auto;
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto !important;
+}
+
+.block.child.skill-image {
+    width: 100%;
+    height: auto;
+    max-height: 5em;
+    align-self: center;
+}
+
+ul.social-media.bottom {
+    display: none;
+}
+
+ul.social-media li {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+//a.social-media {
+//  padding-left: 1em;
+//}
+header a {
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+}
+
+.highlight {
+    text-shadow: 1px 2px 16px $color-background-lightest;
+}
+
+footer {
+    background: #565656;
+    border-top: $color-background-dark solid 1em;
+    width: 100%;
+    padding: 1em;
+    text-align: center;
+}
+
+section {
+    width: 100%;
+}
+
+hr {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+section>header {
+    color: $color-background-accent;
+    background: $color-background;
+}
+
+div.row {
+    padding-bottom: 1em;
+}
+
+header {
+    margin-bottom: 1em;
+}
+
+footer {
+    padding-top: 10px;
+}
+
+.myName {
+    // font-size: 100vw;
+    font-weight: 100;
+    font-family: $font-display;
+    line-height: 1.7em;
+}
+
+#return-to-top {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    border-radius: 35px;
+    z-index: 9999;
+    // display: none;
+    transition: all 0.3s ease;
+}
+
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    transition: all 0.3s ease;
+}
+
+#return-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #eee;
+    padding: 20px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 5px solid #fff;
+    position: relative;
+    top: 0;
+    bottom: 100%;
+    right: 0;
+    z-index: 1;
+    padding-right: calc(85vw - 70%);
+    padding-left: calc(85vw - 70%);
+    //height: 3.5em;
+    stroke-width: 0;
+    stroke: $color-background-dark;
+    fill: $color-background-darkest;
+}
+
+.icon:hover {
+    fill: lighten($color-background, 10%);
+}
+
+#myFace {
+    max-width: 3.7em;
+    max-height: 3.7em;
+    margin-right: 10px;
+    margin-left: 0;
+}
+
+.clip-circle {
+    clip-path: circle(30px at center);
+}
+
+footer a {
+    color: #eee;
+}
+
+nav.top>ul>li {
+    display: inline;
+    border-bottom: 1px solid;
+    border-color: $color-background-darkest;
+}
+
+div.block.child>ul>li {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+nav.top {
+    margin-left: 2em;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+section>div.container {
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+small.child {
+    white-space: nowrap;
+    flex-shrink: 1;
+    flex-grow: 0;
+    padding-left: 1em;
+    padding-right: 3em;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+nav.top>ul>li.active {
+    border-radius: 5px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-color: $color-background-darkest;
+}
+
+nav.top>ul>li:hover {
+    background: darken($color-background-accent, 5%)
+}
+
+section>header h2 {
+    padding: 1rem;
+}
+
+li.child {
+    margin-left: 5px;
+    margin-right: 5px;
+    list-style-type: none;
+    display: inline-block;
+    width: calc(100% / 3);
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.parent {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    //justify-content: center;
+    //align-items: stretch;
+    //max-width: $tablet-screen-width;
+    //overflow: hidden;
+    //width: $mobile-screen-width
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.no-wrap {
+    flex-flow: nowrap;
+}
+
+
+/* entypo */
+
+[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+}
+
+// This hides all menu items while resolution is over tablet width.
+@media all and (min-width: 1475px) {
+    .nav-off-canvas {
+        display: none;
+    }
+    .nav-trigger {
+        display: none;
+    }
+    label[for="nav-trigger"] {
+        display: none;
+    }
+}
+
+@media all and (max-width: 1475px) {
+    nav.top.child {
+        //Horizontal nav menu
+        display: none;
+    }
+}
+
+// This centers content once width is less than tablet.
+@media all and (max-width: $tablet-screen-width) {
+    nav.top.child {
+        //Horizontal nav menu
+        display: none;
+    }
+    .wrapper {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    section h1,
+    h2,
+    h3,
+    h4 {
+        text-align: center;
+    }
+    header.bar>nav.top>ul li>a {
+        padding-left: 4em;
+        padding-right: 4em;
+    }
+    header.bar {
+        justify-content: space-between;
+    }
+    .flex {
+        max-width: $tablet-screen-width;
+    }
+}
+
+// This activates once width is less than or equal to mobile width.
+@media all and (max-width: $mobile-screen-width) {
+    header ul.social-media {
+        display: none;
+    }
+    .block.child.skill-image {
+        max-height: 9em;
+    }
+    small {
+        padding-bottom: 10px;
+    }
+    a .icon {
+        stroke: none;
+    }
+    ul.social-media.bottom {
+        display: flex;
+    }
+}
+
+// this activates once width is less than or equal to 360px
+@media all and (max-width: 360px) {
+    #myFace {
+        display: none;
+    }
+    div.row.flex {
+        //flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        //max-width: $mobile-screen-width;
+    }
+    .child {
+        display: block;
+    }
+    section>div.container {
+        margin: .2em;
+    }
+    .wrapper {
+        margin: 0;
+    }
+}
+
+// Nav Menu Code
+.nav-off-canvas {
+    list-style: none;
+    background: $color-background-lightest;
+    width: 200px;
+    min-height: calc(100vh - 70px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    // This was blocking the footer...
+    // bottom: 0;
+    // left: 0;
+    // z-index: 0;
+}
+
+.nav-item {
+    /* non-critical appearance styles */
+    width: 200px;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #000;
+}
+
+.nav-item a {
+    /* non-critical appearance styles */
+    display: block;
+    padding: 1em;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: color 0.2s, background 0.5s;
+}
+
+.nav-item a:hover {
+    color: $color-background-secondary;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, transparentize($color-background-secondary-darkest, 0.6)100%);
+}
+
+.nav-trigger {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+    //position: fixed;
+    //top: 55px;
+    //right: 15px;
+    z-index: 2;
+}
+
+label[for="nav-trigger"] {
+    /* ... previous styles here... */
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+    background-size: contain;
+}
+
+//.nav-trigger:checked + label {
+//    right: 215px;
+//}
+.nav-trigger:checked~.wrapper {
+    right: 200px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+    //padding-right: 0;
+}
+
+.nav-trigger+label,
+.wrapper {
+    transition: right 0.2s;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+// Navigation Menu End
+a .icon {
+    font-size: 2em;
+    stroke: $color-background-dark;
+    stroke-width: 2;
+    fill: $color-background-accent;
+}
+
+ul.social-media.bottom .icon:hover {
+    fill: darken($color-background-accent, 25%);
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
