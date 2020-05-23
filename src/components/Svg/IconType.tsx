@@ -1,0 +1,23 @@
+export enum IconType {
+  angular,
+  aws,
+  bootstrap,
+  css,
+  design,
+  django,
+  docker,
+  express,
+  flask,
+  gulp,
+  html,
+  javascript,
+  mongodb,
+  nodejs,
+  postgres,
+  python,
+  restApi,
+  sass,
+  travis,
+  typescript,
+  vagrant
+}
